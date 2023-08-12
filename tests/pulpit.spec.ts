@@ -14,7 +14,7 @@ test.describe('Pulpit tests', () => {
     await page.getByRole('button', { name: 'wykonaj' }).click();
     await page.getByTestId('close-button').click();
     await expect(page.locator('#show_messages')).toHaveText(
-      'Przelew wykonany! Chuck Demobankowy - 150,00PLN - pizza'
+      'Przelew wykonany! Chuck Demobankowy - 150,00PLN - pizza',
     );
   });
 
@@ -31,7 +31,7 @@ test.describe('Pulpit tests', () => {
     await page.getByTestId('close-button').click();
 
     await expect(page.locator('#show_messages')).toHaveText(
-      'Doładowanie wykonane! 10,00PLN na numer 500 xxx xxx'
+      'Doładowanie wykonane! 10,00PLN na numer 500 xxx xxx',
     );
   });
 });
