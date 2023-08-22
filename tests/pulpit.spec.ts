@@ -27,7 +27,7 @@ test.describe('Pulpit tests', () => {
 
     // Assert
     await expect(page.locator('#show_messages')).toHaveText(
-      `Przelew wykonany! ${expectedTransferReceiver} - ${transferAmount},00PLN - ${transferTitle}`
+      `Przelew wykonany! ${expectedTransferReceiver} - ${transferAmount},00PLN - ${transferTitle}`,
     );
   });
 
@@ -38,8 +38,7 @@ test.describe('Pulpit tests', () => {
     const userPassword = 'password';
     const phoneNumber = '500 xxx xxx';
     const topupAmount = '10';
-    const expectedMessage =
-      `Doładowanie wykonane! ${topupAmount},00PLN na numer ${phoneNumber}`;
+    const expectedMessage = `Doładowanie wykonane! ${topupAmount},00PLN na numer ${phoneNumber}`;
 
     //Act
     await page.goto(url);
