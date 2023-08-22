@@ -39,7 +39,7 @@ test.describe('Pulpit tests', () => {
     const phoneNumber = '500 xxx xxx';
     const topupAmount = '10';
     const expectedMessage =
-      'Doładowanie wykonane! 10,00PLN na numer 500 xxx xxx';
+      `Doładowanie wykonane! ${topupAmount},00PLN na numer ${phoneNumber}`;
 
     //Act
     await page.goto(url);
