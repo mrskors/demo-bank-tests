@@ -2,11 +2,10 @@ import { test, expect } from '@playwright/test';
 
 test.describe('Pulpit tests', () => {
   test.beforeEach(async ({ page }) => {
-    const url = 'https://demo-bank.vercel.app/';
     const userId = 'testerLO';
     const userPassword = 'password';
 
-    await page.goto(url);
+    await page.goto('/');
     await page.getByTestId('login-input').fill(userId);
     await page.getByTestId('password-input').fill(userPassword);
     await page.getByTestId('login-button').click();
@@ -28,7 +27,7 @@ test.describe('Pulpit tests', () => {
 
     // Assert
     await expect(page.locator('#show_messages')).toHaveText(
-      `Przelew wykonany! ${expectedTransferReceiver} - ${transferAmount},00PLN - ${transferTitle}`,
+      `Przelew wykonany! ${expectedTransferReceiver} - ${transferAmount},00PLN - ${transferTitle}`
     );
   });
 
