@@ -1,4 +1,5 @@
 import { test, expect } from '@playwright/test';
+import { loginData } from '../test-data/login.data';
 
 test.describe('User login to Demobank', () => {
   test.beforeEach(async ({ page }) => {
@@ -6,8 +7,8 @@ test.describe('User login to Demobank', () => {
   });
   test('successful login with correct credentials', async ({ page }) => {
     // Arrange
-    const userId = 'testerLO';
-    const userPassword = 'password';
+    const userId = loginData.userId;
+    const userPassword = loginData.password;
     const expectedUserName = 'Jan Demobankowy';
 
     // Act
@@ -30,7 +31,7 @@ test.describe('User login to Demobank', () => {
 
     //Assert
     await expect(page.getByTestId('error-login-id')).toHaveText(
-      expectedErrorMessage,
+      expectedErrorMessage
     );
   });
 
@@ -45,7 +46,7 @@ test.describe('User login to Demobank', () => {
 
     //Assert
     await expect(page.getByTestId('error-login-password')).toHaveText(
-      expectedErrorMessage,
+      expectedErrorMessage
     );
   });
 });
