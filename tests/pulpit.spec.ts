@@ -12,9 +12,7 @@ test.describe('Pulpit tests', () => {
     const loginPage = new LoginPage(page);
 
     await page.goto('/');
-    await loginPage.loginInput.fill(userId);
-    await loginPage.passwordInput.fill(userPassword);
-    await loginPage.loginButton.click();
+    await loginPage.login(userId, userPassword);
 
     pulpitPage = new PulpitPage(page);
   });
